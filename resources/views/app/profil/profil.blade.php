@@ -14,7 +14,7 @@
 		<form method="POST" action="/result">
 			<div class="form-group mt-5">
 			  	<label class="font1 labelForm" for="user">Nama:</label>
-			  	<input type="text" value="@php($mahasiswa->nama_mhs)" class="form-control" id="user" placeholder="Masukkan Nama" name="user">
+			  	<input type="text" value="{{$mahasiswa->nama_mhs}}" class="form-control" id="user" placeholder="Masukkan Nama" name="user">
 			</div>
 			<div class="form-group">
 			  	<label class="font1 labelForm" for="npm">NPM:</label>

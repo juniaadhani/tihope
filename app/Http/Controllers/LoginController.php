@@ -39,6 +39,6 @@ class LoginController extends Controller
             return redirect()->route("/login");
         }
         $this->setCookie($request, "isLogin", "true");
-        return redirect()->route("/home");
+        return redirect()->route("/");
     }
 }

@@ -13,6 +13,7 @@ class HomeController extends Controller
     {
         $isLogin = $request->session()->get("isLogin");
         $npm = $request->session()->get("npm_mhs");
+        $user = null;
         if (!is_null($npm)) {
             $user = DB::table("mahasiswas")->where("npm_mhs", $npm)->first();
         }

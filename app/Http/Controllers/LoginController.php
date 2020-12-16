@@ -27,11 +27,13 @@ class LoginController extends Controller
             return redirect('/login');
         }
         $request->session()->put("isLogin", "true");
+        $request->session()->put("npm_mhs", $username);
         return redirect('/home');
     }
 
     public function logout(Request $request) {
         $request->session()->forget("isLogin");
+        $request->session()->forget("npm_mhs");
         return redirect("/home");
     }
 }

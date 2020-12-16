@@ -9,18 +9,23 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	return view('app/home/home');
+        $isLogin = $request->session()->get("isLogin");
+        $npm = $request->session()->get("npm_mhs");
+        if (!is_null($npm)) {
+            $user = DB::table("mahasiswas")->where("npm_mhs", $npm)->first();
+        }
+    	return view('app/home/home', compact('user', 'isLogin'));
     }
 
     public function materi()
     {
-    	return view('app/home/materi');	
+    	return view('app/home/materi');
     }
 
     public function download()
     {
-    	return view('app/home/download');	
+    	return view('app/home/download');
     }
 }

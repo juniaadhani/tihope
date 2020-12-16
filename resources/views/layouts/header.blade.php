@@ -26,11 +26,18 @@
         </div>
     </form>
     <div class="dropdown nav-link pl-1 col-md-1" href="{{url('/login')}}">
+        @if($isLogin == "true")
       <button type="button btn-login" class="btn font2 btn-md dropdown-toggle" data-toggle="dropdown" style="background-color: #EECB2D; color:#FFFFFF">Hi! Rifa</button>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="{{url('/profil')}}">Profil</a>
         <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
       </div>
+        @else
+            <button type="button btn-login" class="btn font2 btn-md dropdown-toggle" data-toggle="dropdown" style="background-color: #EECB2D; color:#FFFFFF">Login</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="{{url('/login')}}">Profil</a>
+            </div>
+        @endif
     </div>
   </nav>
 {{-- </div> --}}

@@ -27,7 +27,7 @@ color: #eecb2d;
 					</div>
 					<div class="form-group">
 			  			<label class="font1 labelForm" for="npm"></label>
-			  			<input type="text" class="form-control" id="sandi" placeholder="Masukkan Kata Sandi" name="sandi">
+			  			<input type="password" class="form-control" id="sandi" placeholder="Masukkan Kata Sandi" name="sandi">
 					</div>
 					<button type="submit" class="btn btn-primary btn-block btn-large border border-light mt-5 mb-4" style="background-color: #EECB2D; color:#FFFFFF">Masuk</button>
 					<div class="mb-4" align="center"><a  href="#" style="color: #EECB2D;" align="center">Forgot Password?</a></div>

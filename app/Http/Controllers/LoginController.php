@@ -11,10 +11,15 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         $isLogin = $request->session()->get("isLogin");
+        $npm = $request->session()->get("npm_mhs");
+        $user = null;
+        if (!is_null($npm)) {
+            $user = DB::table("mahasiswas")->where("npm_mhs", $npm)->first();
+        }
         if ($isLogin == "true") {
             return redirect('/home');
         }
-        return view('app/login/login');
+        return view('app/login/login', compact('user', 'isLogin'));
     }
 
 

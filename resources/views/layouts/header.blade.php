@@ -35,7 +35,7 @@
         @else
             <button type="button btn-login" class="btn font2 btn-md dropdown-toggle" data-toggle="dropdown" style="background-color: #EECB2D; color:#FFFFFF">Login</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="{{url('/login')}}">Profil</a>
+                <a class="dropdown-item" href="{{url('/login')}}">Login</a>
             </div>
         @endif
     </div>

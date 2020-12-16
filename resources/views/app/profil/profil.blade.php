@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-group">
 			    <label class="font1 labelForm" for="pwd">Password:</label>
-			    <input type="password" class="form-control" id="password" placeholder="Masukkan Password" name="password">
+			    <input type="password" required class="form-control" id="password" placeholder="Masukkan Password" name="password">
 			</div>
 	        <button type="submit" class="btn btn-primary btn-block btn-large border border-light mt-5" style="background-color: #EECB2D; color:#FFFFFF">Save</button>
         </form>

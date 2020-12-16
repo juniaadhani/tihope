@@ -37,7 +37,7 @@ class ProfilController extends Controller
                 "id" => $user->id,
                 "nama_mhs" => $user->nama_mhs,
                 "jk_mhs" => $user->jk_mhs,
-                "tempat_lhr-mhs" => $user->tempat_lhr_mhs,
+                "tempat_lhr_mhs" => $user->tempat_lhr_mhs,
                 "tgl_lhr_mhs" => $user->tgl_lhr_mhs,
                 "no_hp_mhs" => $user->no_hp_mhs,
                 "email_mhs" => $user->email_mhs,

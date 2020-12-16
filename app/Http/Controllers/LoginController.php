@@ -30,7 +30,6 @@ class LoginController extends Controller
     }
 
     public function login(Request $request) {
-        dd($request->all());
         $username = $request->username;
         $sandi = $request->sandi;
         $user = DB::table("mahasiswas")->where("npm_mhs", $username)

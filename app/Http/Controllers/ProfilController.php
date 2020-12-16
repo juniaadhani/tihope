@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use function Symfony\Component\String\u;
 
 
 class ProfilController extends Controller
@@ -19,5 +20,24 @@ class ProfilController extends Controller
         }
         $mahasiswa = DB::table("mahasiswas")->where("npm_mhs", $npm_mhs)->first();
     	return view('app/profil/profil', compact('mahasiswa', 'user', 'isLogin'));
+    }
+
+    public function save(Request $request) {
+        $nama = $request->nama;
+        $npm = $request->npm;
+        $email = $request->email;
+        $no_hp = $request->no_hp;
+        $pswd = $request->password;
+        $id = $request->id;
+        $user = DB::table("mahasiswas")->where("id", $id)->first();
+        if (!is_null($user)) {
+            $user->nama = $nama;
+            $user->email = $email;
+            $user->no_hp = $no_hp;
+            $user->password = $pswd;
+            $user->save();
+            return redirect("/profil/" .$npm);
+        }
+        return redirect("/home");
     }
 }

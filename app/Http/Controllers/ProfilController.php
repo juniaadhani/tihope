@@ -35,6 +35,7 @@ class ProfilController extends Controller
             $user->password = $pswd;
             DB::table("mahasiswas")->updateOrInsert(array(
                 "id" => $user->id,
+                "npm_mhs" => $user->npm_mhs,
                 "nama_mhs" => $user->nama_mhs,
                 "jk_mhs" => $user->jk_mhs,
                 "tempat_lhr_mhs" => $user->tempat_lhr_mhs,

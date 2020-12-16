@@ -35,9 +35,12 @@ class LoginController extends Controller
         $sandi = $request->sandi;
         $user = DB::table("mahasiswas")->where("npm_mhs", $username)
             ->where("password", $sandi)->first();
+        error_log('masuk sini dengan user ', $user);
         if (is_null($user)) {
+            error_log('ga ketemu.');
             return redirect()->route("/login");
         }
+        error_log('ketemu.');
         $this->setCookie($request, "isLogin", "true");
         return redirect()->route("/home");
     }

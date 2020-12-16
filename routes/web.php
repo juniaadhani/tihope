@@ -28,4 +28,4 @@ Route::get('/profil/{npm_mhs}', function ($npm_mhs, \Illuminate\Http\Request $re
 Route::get('/login', 'LoginController@index');
 Route::get('/logout', 'LoginController@logout');
 Route::post('/login/login', 'LoginController@login');
-Route::post('/saveData', 'ProfilController@saveData');
+Route::post('/profil/saveData', 'ProfilController@saveData');

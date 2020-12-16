@@ -31,9 +31,18 @@ class ProfilController extends Controller
         if (!is_null($user)) {
             $user->nama = $nama;
             $user->email = $email;
-            $user->no_hp = $no_hp;
+            $user->no_hp_mhs = $no_hp;
             $user->password = $pswd;
-            DB::table("mahasiswas")->updateOrInsert($user);
+            DB::table("mahasiswas")->updateOrInsert(array(
+                "id" => $user->id,
+                "nama_mhs" => $user->nama_mhs,
+                "jk_mhs" => $user->jk_mhs,
+                "tempat_lhr-mhs" => $user->tempat_lhr_mhs,
+                "tgl_lhr_mhs" => $user->tgl_lhr_mhs,
+                "no_hp_mhs" => $user->no_hp_mhs,
+                "email_mhs" => $user->email_mhs,
+                "password" => $user->password
+            ));
             return redirect("/profil/" .$npm);
         }
         return redirect("/home");

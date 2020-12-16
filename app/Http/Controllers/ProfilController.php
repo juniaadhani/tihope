@@ -33,7 +33,7 @@ class ProfilController extends Controller
             $user->email = $email;
             $user->no_hp = $no_hp;
             $user->password = $pswd;
-            $user->save();
+            DB::table("mahasiswas")->updateOrInsert($user);
             return redirect("/profil/" .$npm);
         }
         return redirect("/home");

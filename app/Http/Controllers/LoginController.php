@@ -12,7 +12,7 @@ class LoginController extends Controller
     public function index(Request $request)
     {
         $isLogin = $this->getCookie($request, "isLogin");
-        if ($isLogin) {
+        if ($isLogin == "true") {
             return view('app/home/home');
         }
     	return view('app/login/login');

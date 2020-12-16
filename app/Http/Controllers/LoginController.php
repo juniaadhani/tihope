@@ -36,7 +36,7 @@ class LoginController extends Controller
         $user = DB::table("mahasiswas")->where("npm_mhs", $username)
             ->where("password", $sandi)->first();
         if (is_null($user)) {
-            return view('app/login/login');
+            return redirect()->route("/login");
         }
         $this->setCookie($request, "isLogin", "true");
         return view('app/home/home');

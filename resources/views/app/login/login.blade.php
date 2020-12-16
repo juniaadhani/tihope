@@ -19,14 +19,14 @@ color: #eecb2d;
 		 	</div>
 		 	<div class="col-md-5">
 		 		<h1 class="d-flex justify-content-center font2 mt-5" style="color : #eecb2d;text-align: center; font-size: 47px;border-radius: 10px; text-align: ">Login</h1>
-		 		<form method="POST" action="/result">
+		 		<form method="POST" action="{{url('login/login')}}">
 					<div class="form-group mt-5">
 			  			<label class="font1 labelForm" for="user"></label>
 			  			<input type="text" class="form-control" id="user" placeholder="Masukkan Username" name="username">
 					</div>
 					<div class="form-group">
 			  			<label class="font1 labelForm" for="npm"></label>
-			  			<input type="text" class="form-control" id="npm" placeholder="Masukkan Kata Sandi" name="sandi">
+			  			<input type="text" class="form-control" id="sandi" placeholder="Masukkan Kata Sandi" name="sandi">
 					</div>
 					<button type="submit" class="btn btn-primary btn-block btn-large border border-light mt-5 mb-4" style="background-color: #EECB2D; color:#FFFFFF">Masuk</button>
 					<div class="mb-4" align="center"><a  href="#" style="color: #EECB2D;" align="center">Forgot Password?</a></div>

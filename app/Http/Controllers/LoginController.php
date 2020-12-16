@@ -28,4 +28,17 @@ class LoginController extends Controller
     public function getCookie(Request $request, $key){
         return $request->cookie($key);
     }
+
+    public function login(Request $request) {
+        dd($request->all());
+        $username = $request->username;
+        $sandi = $request->sandi;
+        $user = DB::table("mahasiswas")->where("npm_mhs", $username)
+            ->where("password", $sandi)->first();
+        if (is_null($user)) {
+            return view('app/login/login');
+        }
+        $this->setCookie($request, "isLogin", "true");
+        return view('app/home/home');
+    }
 }

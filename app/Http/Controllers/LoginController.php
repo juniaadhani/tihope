@@ -12,9 +12,9 @@ class LoginController extends Controller
     {
         $isLogin = $request->session()->get("isLogin");
         if ($isLogin == "true") {
-            return view('app/home/home');
+            return redirect('/home');
         }
-    	return view('app/login/login');
+        return redirect('/login');
     }
 
 
@@ -28,5 +28,10 @@ class LoginController extends Controller
         }
         $request->session()->put("isLogin", "true");
         return redirect('/home');
+    }
+
+    public function logout(Request $request) {
+        $request->session()->forget("isLogin");
+        return redirect("/home");
     }
 }

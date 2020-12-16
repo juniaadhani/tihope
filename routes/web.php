@@ -26,4 +26,5 @@ Route::get('/profil/{npm_mhs}', function ($npm_mhs) {
     return (new \App\Http\Controllers\ProfilController())->index($npm_mhs);
 });
 Route::get('/login', 'LoginController@index');
+Route::get('/logout', 'LoginController@logout');
 Route::post('/login/login', 'LoginController@login');

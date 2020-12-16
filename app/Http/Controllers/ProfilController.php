@@ -33,7 +33,7 @@ class ProfilController extends Controller
             $user->email = $email;
             $user->no_hp_mhs = $no_hp;
             $user->password = $pswd;
-            DB::table("mahasiswas")->updateOrInsert(array(
+            DB::table("mahasiswas")->update(array(
                 "id" => $user->id,
                 "npm_mhs" => $user->npm_mhs,
                 "nama_mhs" => $user->nama_mhs,

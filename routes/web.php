@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app/home/home');
+    return redirect('/home');
 });
 
 Route::get('/home','HomeController@index');

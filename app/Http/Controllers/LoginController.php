@@ -3,32 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
 
 class LoginController extends Controller
 {
     public function index(Request $request)
     {
-        $isLogin = $this->getCookie($request, "isLogin");
+        $isLogin = $request->session()->get("isLogin");
         if ($isLogin == "true") {
             return view('app/home/home');
         }
     	return view('app/login/login');
     }
 
-    public function setCookie(Request $request, $key, $value){
-        $minutes = 360;
-        $response = new Response('Set Cookie');
-        $response->withCookie(cookie($key, $value, $minutes));
-        return $response;
-    }
-
-    public function getCookie(Request $request, $key){
-        return $request->cookie($key);
-    }
 
     public function login(Request $request) {
         $username = $request->username;
@@ -38,7 +26,7 @@ class LoginController extends Controller
         if (is_null($user)) {
             return redirect('/login');
         }
-        $response = $this.setCookie($request, "isLogin", "true");
-        return redirect('/home', $response);
+        $request->session()->put("isLogin", "true");
+        return redirect('/home');
     }
 }

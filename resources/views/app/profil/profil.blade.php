@@ -18,15 +18,15 @@
 			</div>
 			<div class="form-group">
 			  	<label class="font1 labelForm" for="npm">NPM:</label>
-			  	<input type="text" class="form-control" id="npm" placeholder="Masukkan NPM" name="npm">
+			  	<input type="text" value="{{$mahasiswa->npm_mhs}}" class="form-control" id="npm" placeholder="Masukkan NPM" name="npm">
 			</div>
 			<div class="form-group">
 			    <label class="font1 labelForm" for="email">Email:</label>
-			    <input type="email" class="form-control" id="email" placeholder="Masukkan Email" name="email">
+			    <input type="email" value="{{$mahasiswa->email_mhs}}" class="form-control" id="email" placeholder="Masukkan Email" name="email">
 			</div>
 			<div class="form-group">
 			  	<label class="font1 labelForm" for="no_hp">No Hp:</label>
-			  	<input type="text" class="form-control" id="no_hp" placeholder="Masukkan No Hp" name="no_hp">
+			  	<input type="text" value="{{$mahasiswa->no_hp_mhs}}" class="form-control" id="no_hp" placeholder="Masukkan No Hp" name="no_hp">
 			</div>
 			<div class="form-group">
 			    <label class="font1 labelForm" for="pwd">Password:</label>

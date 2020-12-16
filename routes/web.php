@@ -22,8 +22,8 @@ Route::get('/home/materi','HomeController@materi');
 Route::get('/home/materi/download','HomeController@download');
 Route::get('/about','AboutController@index');
 Route::get('/contact','ContactUsController@index');
-Route::get('/profil/{npm_mhs}', function ($npm_mhs) {
-    return (new \App\Http\Controllers\ProfilController())->index($npm_mhs);
+Route::get('/profil/{npm_mhs}', function ($npm_mhs, \Illuminate\Http\Request $request) {
+    return (new \App\Http\Controllers\ProfilController())->index($request, $npm_mhs);
 });
 Route::get('/login', 'LoginController@index');
 Route::get('/logout', 'LoginController@logout');

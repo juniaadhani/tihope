@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 
 class ProfilController extends Controller
 {
-    public function index($npm_mhs, Request $request)
+    public function index(Request $request, $npm_mhs)
     {
         $isLogin = $request->session()->get("isLogin");
         $npm = $request->session()->get("npm_mhs");

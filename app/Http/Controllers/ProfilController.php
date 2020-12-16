@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use function Symfony\Component\String\u;
 
 
 class ProfilController extends Controller

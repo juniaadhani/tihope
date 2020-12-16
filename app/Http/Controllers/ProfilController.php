@@ -22,7 +22,7 @@ class ProfilController extends Controller
     	return view('app/profil/profil', compact('mahasiswa', 'user', 'isLogin'));
     }
 
-    public function save(Request $request) {
+    public function saveData(Request $request) {
         $nama = $request->nama;
         $npm = $request->npm;
         $email = $request->email;

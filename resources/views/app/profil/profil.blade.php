@@ -11,7 +11,7 @@
 			<h1 class="judul font1">Profil</h1>
 			<hr style="border: 1px solid #EECB2D">
 		</div>
-		<form method="POST" action="<?php echo action('ProfilController@save'); ?>">
+		<form method="POST" action="<?php echo action('ProfilController@saveData'); ?>">
             <input type="text" value="{{$mahasiswa->id}}" class="form-control" id="id" placeholder="Masukkan Nama" name="id">
 			<div class="form-group mt-5">
 			  	<label class="font1 labelForm" for="user">Nama:</label>

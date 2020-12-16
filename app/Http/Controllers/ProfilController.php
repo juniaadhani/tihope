@@ -29,8 +29,8 @@ class ProfilController extends Controller
         $id = $request->id;
         $user = DB::table("mahasiswas")->where("id", $id)->first();
         if (!is_null($user)) {
-            $user->nama = $nama;
-            $user->email = $email;
+            $user->nama_mhs = $nama;
+            $user->email_mhs = $email;
             $user->no_hp_mhs = $no_hp;
             $user->password = $pswd;
             DB::table("mahasiswas")->update(array(

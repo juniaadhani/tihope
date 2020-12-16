@@ -27,9 +27,9 @@
     </form>
     <div class="dropdown nav-link pl-1 col-md-1" href="{{url('/login')}}">
         @if($isLogin == "true")
-      <button type="button btn-login" class="btn font2 btn-md dropdown-toggle" data-toggle="dropdown" style="background-color: #EECB2D; color:#FFFFFF">Hi! Rifa</button>
+      <button type="button btn-login" class="btn font2 btn-md dropdown-toggle" data-toggle="dropdown" style="background-color: #EECB2D; color:#FFFFFF">Hi! {{$user->nama_mhs}}</button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="{{url('/profil')}}">Profil</a>
+        <a class="dropdown-item" href="{{url('/profil/' + $user->npm_mhs)}}">Profil</a>
         <a class="dropdown-item" href="{{url('/logout')}}">Logout</a>
       </div>
         @else

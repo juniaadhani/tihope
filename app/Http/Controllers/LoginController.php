@@ -14,7 +14,7 @@ class LoginController extends Controller
         if ($isLogin == "true") {
             return redirect('/home');
         }
-        return redirect('/login');
+        return view('app/login/login');
     }
 
 

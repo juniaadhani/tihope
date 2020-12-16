@@ -14,7 +14,7 @@ class CreateLoginTable extends Migration
     public function up()
     {
         Schema::create('login', function (Blueprint $table) {
-            $table->integer('npm_mhs');
+            $table->char('npm_mhs',12);
             $table->string('password');
         });
     }

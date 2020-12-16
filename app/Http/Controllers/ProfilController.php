@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
 
 class ProfilController extends Controller
 {
-    public function index()
+    public function index($npm_mhs)
     {
-    	return view('app/profil/profil');
+        $mahasiswa = DB::table("mahasiswas")->where("npm_mhs", $npm_mhs)->first();
+    	return view('app/profil/profil', $mahasiswa);
     }
 }

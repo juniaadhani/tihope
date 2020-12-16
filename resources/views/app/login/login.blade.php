@@ -19,7 +19,8 @@ color: #eecb2d;
 		 	</div>
 		 	<div class="col-md-5">
 		 		<h1 class="d-flex justify-content-center font2 mt-5" style="color : #eecb2d;text-align: center; font-size: 47px;border-radius: 10px; text-align: ">Login</h1>
-		 		<form method="POST" action="{{url('login/login')}}">
+		 		<form method="POST" action="<?php echo action('LoginController@login'); ?>">
+                    @csrf
 					<div class="form-group mt-5">
 			  			<label class="font1 labelForm" for="user"></label>
 			  			<input type="text" class="form-control" id="user" placeholder="Masukkan Username" name="username">

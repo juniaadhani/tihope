@@ -11,6 +11,6 @@ class ProfilController extends Controller
     public function index($npm_mhs)
     {
         $mahasiswa = DB::table("mahasiswas")->where("npm_mhs", $npm_mhs)->first();
-    	return view('app/profil/profil', $mahasiswa);
+    	return view('app/profil/profil', compact($mahasiswa));
     }
 }

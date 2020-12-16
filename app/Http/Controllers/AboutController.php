@@ -9,8 +9,14 @@ use App\Http\Controllers\Controller;
 
 class AboutController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-    	return view('app/about/about');
+        $isLogin = $request->session()->get("isLogin");
+        $npm = $request->session()->get("npm_mhs");
+        $user = null;
+        if (!is_null($npm)) {
+            $user = DB::table("mahasiswas")->where("npm_mhs", $npm)->first();
+        }
+    	return view('app/about/about', compact('isLogin', 'user'));
     }
 }

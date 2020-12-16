@@ -44,7 +44,7 @@ class ProfilController extends Controller
                 "email_mhs" => $user->email_mhs,
                 "password" => $user->password
             ));
-            return redirect("/profil/" .$npm);
+            return redirect("/profil/" .$user->npm_mhs);
         }
         return redirect("/home");
     }

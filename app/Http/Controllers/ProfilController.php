@@ -33,17 +33,17 @@ class ProfilController extends Controller
             $user->email_mhs = $email;
             $user->no_hp_mhs = $no_hp;
             $user->password = $pswd;
-            DB::table("mahasiswas")->update(array(
-                "id" => $user->id,
-                "npm_mhs" => $user->npm_mhs,
-                "nama_mhs" => $user->nama_mhs,
-                "jk_mhs" => $user->jk_mhs,
-                "tempat_lhr_mhs" => $user->tempat_lhr_mhs,
-                "tgl_lhr_mhs" => $user->tgl_lhr_mhs,
-                "no_hp_mhs" => $user->no_hp_mhs,
-                "email_mhs" => $user->email_mhs,
-                "password" => $user->password
-            ));
+            DB::table("mahasiswas")->where("id", $user->id)
+                ->update(array(
+                    "npm_mhs" => $user->npm_mhs,
+                    "nama_mhs" => $user->nama_mhs,
+                    "jk_mhs" => $user->jk_mhs,
+                    "tempat_lhr_mhs" => $user->tempat_lhr_mhs,
+                    "tgl_lhr_mhs" => $user->tgl_lhr_mhs,
+                    "no_hp_mhs" => $user->no_hp_mhs,
+                    "email_mhs" => $user->email_mhs,
+                    "password" => $user->password
+                ));
             return redirect("/profil/" .$user->npm_mhs);
         }
         return redirect("/home");
